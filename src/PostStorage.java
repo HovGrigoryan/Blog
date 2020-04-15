@@ -36,10 +36,16 @@ public class PostStorage<extend> implements PostStoragelmpl {
 
     @Override
     public void searchPostsByKeyword(String keyword) {
+        boolean isFound = false;
         for (int i = 0; i < size; i++) {
             if (posts[i].getTitle().contains(keyword) || posts[i].getText().contains(keyword)) {
                 System.out.println(posts[i]);
+                isFound = true;
             }
+
+        }
+        if (!isFound) {
+            System.out.println("There isn't that word");
         }
 
     }
@@ -54,15 +60,20 @@ public class PostStorage<extend> implements PostStoragelmpl {
 
     @Override
     public void printPostsByCategory(String category) throws CategoryNotFoundException {
+        boolean isf = false;
         for (int i = 0; i < size; i++) {
             if (posts[i].getCategory().equals(category)) {
                 System.out.println(posts[i]);
-            } else {
-                throw new CategoryNotFoundException("There isn't that Category");
+                isf = true;
+            }
 
             }
+        if(!isf){
+        throw new CategoryNotFoundException("There isn't that Category");
         }
+
 
 
     }
 }
+

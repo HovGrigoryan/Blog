@@ -37,8 +37,19 @@ public class BlogMain implements Commands {
                 case ALL_POSTS:
                     allPosts();
                     break;
+                case POSTS_BY_KEYWORD:
+                    search();
+                    break;
+                default:
+                    System.out.println("wrong command");
             }
         }
+    }
+
+    private static void search() {
+        System.out.println("Please Input word");
+        String word = scanner.nextLine();
+        postStorage.searchPostsByKeyword(word);
     }
 
     private static void allPosts() {
@@ -101,5 +112,6 @@ public class BlogMain implements Commands {
         System.out.println("Please input " + SEARCH_POST + " for Search by Title");
         System.out.println("Please input " + POSTS_BY_CATEGORY + " Search by Category");
         System.out.println("Please input " + ALL_POSTS + " for All posts");
+        System.out.println("Please input " + POSTS_BY_KEYWORD + " for Search");
     }
 }

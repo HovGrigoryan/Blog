@@ -4,6 +4,7 @@ public interface Commands {
     int SEARCH_POST = 2;
     int POSTS_BY_CATEGORY = 3;
     int ALL_POSTS = 4;
+    int POSTS_BY_KEYWORD = 5;
 
 
 }
